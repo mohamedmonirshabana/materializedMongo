@@ -1,4 +1,5 @@
 import {  IsOptional, IsString, IsNumber, } from 'class-validator';
+
 // import {isEmpty ,IsNotEmpty, isString, Matches} from 'class-validator';
 
 export class CreateItemdto{
@@ -15,9 +16,6 @@ export class CreateItemdto{
     category;
 
     @IsString()
-    @IsOptional()
-    details;
-
-    
+    details;   
 
 }

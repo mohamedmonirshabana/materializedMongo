@@ -25,6 +25,12 @@ export class ItemsController {
         return await this._ItemsService.insertData(itemDataDto);
     }
 
+    @Get('generate')
+    async Generate(): Promise<string>{
+        await this._ItemsService.GenerateData();
+        return "Data Genrate";
+    }
+
 
     //return Data 
     @Get('getparent')
@@ -49,22 +55,17 @@ export class ItemsController {
     // return All Data under Parent
 
     // Delete
-    // @Delete(':id')
-    // @ApiOperation({summary: "Delete Item from DB"})
-    // @ApiResponse({status:200, description: "Done"})
-    // async deleteParent(@Param()id: string) : Promise<Items> {
-    //     return await this._ItemsService.deleteItem(id);
-    // }
-
-
-    // @Get('test/:par')
-    // async testFunc(@Param()par): Promise<string>{
-    //     return "Hello Group "+ par;
-    // }
+    @Delete('delete')
+    @ApiOperation({summary: "Delete Item from DB"})
+    @ApiResponse({status:200, description: "Done"})
+    async deleteParent(@Body('itemid')itemid: string) : Promise<Items> {
+        return await this._ItemsService.deleteItem(itemid);
+    }
 
     //Update
-    // @Put(':id')
-    // async updateItem(@Param()id: string,  @Body()itemDataDto: CreateItemdto): Promise<Items>{
+    // @Put()
+    // async updateItem(@Body()itemDataDto: CreateItemdto): Promise<Items>{
+    //     const id = itemDataDto.id;
     //     await this._ItemsService.updateData(id,itemDataDto);
     // }
 

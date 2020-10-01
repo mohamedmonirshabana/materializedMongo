@@ -144,7 +144,6 @@ export class ItemsService {
     //find item
     public async findParent(word: string): Promise<Items[]>{
         const queryword =   "/"+word;            //"/^\/"+word+"$/";
-        // console.log("the Rsult is ", queryword);
         return await this._Model.find({parent: {$regex: queryword } });
         // console.log("T is ", T);
         // return T;
@@ -152,10 +151,14 @@ export class ItemsService {
 
     //get all under paretn
     public async findallunderParent(parent: string): Promise<Items[]>{
-        const queryword= "/"+parent+"";
+        // const queryword= "/"+parent+"";
         // console.log("the result is ",queryword);
         //{ name: { $regex: /acme.*corp/i, $nin: [ 'acmeblahcorp' ] } }
         return await this._Model.find({category: {  $regex: parent }});
+    }
+
+    public async GetAllDB(): Promise<Items[]>{
+        return await this._Model.find();
     }
 
 

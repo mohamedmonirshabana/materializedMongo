@@ -9,3 +9,5 @@ export const itemSchema: Schema = new Schema({
     category:{type: String, required: true},
     details:{type: String, required: false}
 }, {timestamps: true});
+
+itemSchema.index({category: 1});

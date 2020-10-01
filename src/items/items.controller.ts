@@ -2,9 +2,9 @@ import { Body, Controller, Delete, Get, Param, Post, } from '@nestjs/common';
 import { ItemsService } from './items.service';
 import { CreateItemdto } from './dto/creat.items.deto';
 import { Items } from './interface/items.interface';
+import { itemSchema } from './schemas/items.schema';
 
 import {
-    ApiBearerAuth,
     ApiOperation,
     ApiResponse,
     ApiTags
@@ -20,36 +20,47 @@ export class ItemsController {
     //send Data 
     @Post('additem')
     @ApiOperation({summary: "add item to DB"})
-    @ApiResponse({status:200, description: "Done"})
+    @ApiResponse({status:200, description: "Done" })
     async Additems( @Body()itemDataDto: CreateItemdto ):Promise<Items>{
         return await this._ItemsService.insertData(itemDataDto);
     }
 
 
     //return Data 
-    @Get(':parent')
-    @ApiOperation({summary: "get parent "})
+    @Get('getparent')
+    @ApiOperation({summary: "get parent ",})
     @ApiResponse({status:200, description: "Done"})
-    async getParentonly(@Param()parent: string):Promise<Items[]>{
-        return await this._ItemsService.findParent(parent);
+    async getParentonly(@Body('word') body: string): Promise<Items[]>{
+        const result = body;
+        // console.log("Hello ", result);
+        return await this._ItemsService.findParent(result);
+        // console.log(Res); 
+        // return Res;
     }
 
-    @Get(':allparents')
+    @Get('getallchild')
     @ApiOperation({summary: "get All under Parent"})
     @ApiResponse({status:200, description: "Done"})
-    async getallunderParent(@Param()allparents: string):Promise<Items[]>{
-        return await this._ItemsService.findallunderParent(allparents);
+    async getallunderParent(@Body('word') body: string):Promise<Items[]>{
+        console.log("welcome to My World", body);
+        return await this._ItemsService.findallunderParent(body);
     }
 
     // return All Data under Parent
 
     // Delete
-    @Delete(':id')
-    @ApiOperation({summary: "Delete Item from DB"})
-    @ApiResponse({status:200, description: "Done"})
-    async deleteParent(@Param()id: string) : Promise<Items> {
-        return await this._ItemsService.deleteItem(id);
-    }
+    // @Delete(':id')
+    // @ApiOperation({summary: "Delete Item from DB"})
+    // @ApiResponse({status:200, description: "Done"})
+    // async deleteParent(@Param()id: string) : Promise<Items> {
+    //     return await this._ItemsService.deleteItem(id);
+    // }
+
+
+    // @Get('test/:par')
+    // async testFunc(@Param()par): Promise<string>{
+    //     return "Hello Group "+ par;
+    // }
 
     //Update
     // @Put(':id')

@@ -1,0 +1,102 @@
+[
+    {
+        "name":"IMac p700",
+        "price": 1500 ,
+        "parent": "/computer",
+        "category":"/item/electronic/computer/pc",
+        "details":"New PC from Apple  "
+    },
+    {
+        "name":"Dell Smart Serise 3000",
+        "price": 1200 ,
+        "parent": "/computer",
+        "category":"/item/electronic/computer/pc",
+        "details":"New PC from Dell Company  "
+    },
+    {
+        "name":"TOSHIBA satellite P770",
+        "price": 1800 ,
+        "parent": "/computer",
+        "category":"/item/electronic/computer/laptop",
+        "details":"Cor I7   "
+    },
+    {
+        "name":"GetWay X 900",
+        "price": 1950 ,
+        "parent": "/computer",
+        "category":"/item/electronic/computer/laptop",
+        "details":"Cor I7 RAM 32 GB   "
+    },
+    {
+        "name":"S6",
+        "price": 950 ,
+        "parent": "/Mobile",
+        "category":"/item/electronic/Mobile/iphone",
+        "details":"New Iphone "
+    },
+    {
+        "name":"X",
+        "price": 1000 ,
+        "parent": "/Mobile",
+        "category":"/item/electronic/Mobile/iphone",
+        "details":"New Smart phone "
+    },
+    {
+        "name":"Note20",
+        "price": 1000 ,
+        "parent": "/Mobile",
+        "category":"/item/electronic/Mobile/Samsung",
+        "details":"New Smart phone "
+    },
+    {
+        "name":"Galaxy s 70",
+        "price": 900 ,
+        "parent": "/Mobile",
+        "category":"/item/electronic/Mobile/Samsung",
+        "details":"New Smart phone "
+    },
+    {
+        "name":"Galaxy s 70",
+        "price": 900 ,
+        "parent": "/Mobile",
+        "category":"/item/electronic/Mobile/Samsung",
+        "details":"New Smart phone "
+    },
+    {
+        "name":"Java How to program",
+        "price": 250 ,
+        "parent": "/Computer",
+        "category":"/item/Books/Computer/Programming",
+        "details":"All For Java "
+    },
+    {
+        "name":"C# Compelete Referance",
+        "price": 250 ,
+        "parent": "/Computer",
+        "category":"/item/Books/Computer/Programming",
+        "details":"All For C# "
+    },
+    {
+        "name":"JavaScript MacGrow Hell",
+        "price": 250 ,
+        "parent": "/Computer",
+        "category":"/item/Books/Computer/Programming",
+        "details":"All For JavaScript "
+    },
+    {
+        "name":"SQL server Scott",
+        "price": 250 ,
+        "parent": "/Computer",
+        "category":"/item/Books/Computer/DB",
+        "details":"All For SQL server "
+    },
+    {
+        "name":"Mongo Cluster",
+        "price": 250 ,
+        "parent": "/Computer",
+        "category":"/item/Books/Computer/DB",
+        "details":"All For Mongo "
+    }
+    
+    
+]

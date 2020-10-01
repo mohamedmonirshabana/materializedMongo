@@ -9,7 +9,7 @@ async function bootstrap() {
   const options = new DocumentBuilder()
     .setTitle("Souqcome Example")
     .setDescription("example for Materialized")
-    .setVersion('1.0')
+    .setVersion('3.0')
     .addTag("items")
     .build();
 

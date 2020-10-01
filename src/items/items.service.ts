@@ -12,7 +12,7 @@ export class ItemsService {
     constructor(@InjectModel(ITEM_TABLE) private _Model: Model<Items>){}
 
 
-    async GenerateData(){
+    async GenerateData(): Promise<void>{
         await this._Model.insertMany([
             {
                 "name":"IMac p700",
